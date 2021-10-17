@@ -1,4 +1,4 @@
-name: inspec-azure-check-profile
+name: inspec-azure-compliance-check
 title: InSpec Azure Checker Profile
 maintainer: ambilykk
 copyright: Apache MIT
