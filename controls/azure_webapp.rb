@@ -13,6 +13,25 @@ control "azure-webapp-check" do
         its('auth_settings.properties') { should have_attributes(validateIssuer: true ) }
         # Virtual Network Route All enabled. This causes all outbound traffic to have Virtual Network Security Groups and User Defined Routes applied.
         its('configuration.properties') { should have_attributes(vnetRouteAllEnabled: true) }
+
+        describe.one do
+          describe latest_python do
+            it { should be_using_latest('python') }
+          end
+        
+          describe latest_aspnet do
+            it { should be_using_latest('aspnet') }
+          end
+
+          describe latest_php do
+            it { should be_using_latest('php') }
+          end
+
+          describe latest_java do
+            it { should be_using_latest('java') }
+          end
+        end
+
       end
     end
   end
