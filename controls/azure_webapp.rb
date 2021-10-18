@@ -23,19 +23,19 @@ control "azure-webapp-check" do
       desc "Web app framework should be latest "
 
       describe.one do
-        describe latest_python do
+        describe azure_webapp(resource_group: resource_group_name, name: webapp_name)  do
           it { should be_using_latest('python') }
         end
       
-        describe latest_aspnet do
+        describe azure_webapp(resource_group: resource_group_name, name: webapp_name)  do
           it { should be_using_latest('aspnet') }
         end
 
-        describe latest_php do
+        describe azure_webapp(resource_group: resource_group_name, name: webapp_name)  do
           it { should be_using_latest('php') }
         end
 
-        describe latest_java do
+        describe azure_webapp(resource_group: resource_group_name, name: webapp_name)  do
           it { should be_using_latest('java') }
         end
       end   
