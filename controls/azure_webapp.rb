@@ -3,8 +3,8 @@ control "azure-webapp-check" do
   impact 1.0                                                                   
   title "Check the properties of Web apps"                       
   desc "Web app authentication and validation rules set or not "
-  azure_resource_groups.names.each do |resource_group_name|                  
-    azure_webapps.names.each do |webapp_name| 
+  azure_resource_groups.names.each do |resource_group_name|   
+    azure_webapps(resource_group: resource_group_name).names.each do |webapp_name| 
       describe azure_webapp(resource_group: resource_group_name, name: webapp_name) do
         it { should exist }     
         # true if the Authentication / Authorization feature is enabled for the current app; otherwise, false.   
