@@ -14,25 +14,31 @@ control "azure-webapp-check" do
         # Virtual Network Route All enabled. This causes all outbound traffic to have Virtual Network Security Groups and User Defined Routes applied.
         its('configuration.properties') { should have_attributes(vnetRouteAllEnabled: true) }
 
-        describe.one do
-          describe latest_python do
-            it { should be_using_latest('python') }
-          end
-        
-          describe latest_aspnet do
-            it { should be_using_latest('aspnet') }
-          end
+      end
+    end
+  end
+  azure_resource_groups.names.each do |resource_group_name|   
+    azure_webapps(resource_group: resource_group_name).names.each do |webapp_name| 
+      
+      desc "Web app framework should be latest "
 
-          describe latest_php do
-            it { should be_using_latest('php') }
-          end
-
-          describe latest_java do
-            it { should be_using_latest('java') }
-          end
+      describe.one do
+        describe latest_python do
+          it { should be_using_latest('python') }
+        end
+      
+        describe latest_aspnet do
+          it { should be_using_latest('aspnet') }
         end
 
-      end
+        describe latest_php do
+          it { should be_using_latest('php') }
+        end
+
+        describe latest_java do
+          it { should be_using_latest('java') }
+        end
+      end   
     end
   end
 end
