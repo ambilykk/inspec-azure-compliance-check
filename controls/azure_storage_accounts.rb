@@ -1,6 +1,6 @@
 control "azure-storage-accounts-check" do                                
     impact 1.0                                                                   
-    
+    desc "Azure storage", "Compliance Test for Azure Storage Accounts "
     azure_resource_groups.names.each do |resource_group_name|
         azure_storage_accounts(resource_group: resource_group_name).names.each do |storage_account_name| 
 

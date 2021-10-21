@@ -2,7 +2,7 @@
 control "azure-webapp-check" do                                
   impact 1.0                                                                   
   title "Check the properties of Web apps"                       
-  
+  desc "Azure Webapp", "Compliance Test for Azure Web app "
   azure_resource_groups.names.each do |resource_group_name|   
     azure_webapps(resource_group: resource_group_name).names.each do |webapp_name| 
 
