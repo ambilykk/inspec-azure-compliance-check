@@ -26,3 +26,13 @@ For more details, refer the [Chef Inspec for Azure](https://docs.chef.io/inspec/
 
 Azure Compliance test can be integrated with your GitHub pipeline using the [azure_compliance_action](https://github.com/ambilykk/azure_compliance_action).
 
+
+# Tests Completed
+
+### Azure Web App
+
+| Name                           |Description                                                                      |
+|--------------------------------|----------------------------------------------------------------------|
+| Authentication Enabled                  | Authentication / Authorization feature is enabled for the current app    |
+| Certificate Issuer Validation           | Gets a value indicating whether the issuer should be a valid HTTPS url and be validated as such                                      |
+| Latest Framework Usage                   | Verify the underlining framework is latest or not - asp.net/php/java/python  |
