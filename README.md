@@ -9,7 +9,7 @@ DevOps automation not only helps to streamline internal processes but also in de
 Compliance tests are defined as Chef Inspec profile, which can be executed directly from commandline as shown below
 
 ```
-inspec exec https://github.com/ambilykk/inspec-azure-compliance-check -t azure://
+inspec exec https://github.com/techrill88/inspec-azure-compliance-check -t azure://
 
 ```
 
@@ -24,7 +24,7 @@ For more details, refer the [Chef Inspec for Azure](https://docs.chef.io/inspec/
 
 ## Using GitHub Custom Action
 
-Azure Compliance test can be integrated with your GitHub pipeline using the [azure_compliance_action](https://github.com/ambilykk/azure_compliance_action).
+Azure Compliance test can be integrated with your GitHub pipeline using the [azure_compliance_action](https://github.com/techrill88/azure_compliance_action).
 
 
 # Tests Included
